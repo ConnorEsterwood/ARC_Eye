@@ -1,0 +1,32 @@
+{
+    "id": "C0436A24",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603207636282.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "expression": "Left_Eye_Dilation",
+        "caption": "Left_Eye_Dilation",
+        "totalObservations": 2329,
+        "displayedObservations": 2329,
+        "variables": 2,
+        "cacheKey": "E044C16B",
+        "object": "Left_Eye_Dilation",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=Left_Eye_Dilation&cache_key=E044C16B&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7598805589531320165,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1603207636282,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -33,14 +33,27 @@ server <- function(input, output, session) {
         reactiveFileReader(100,
                            session,
                            '~/Unreal Projects/MyProject/Left_Eye_Dilation.csv',
-                           read.csv)
+                           read.csv,header=FALSE)
 
 # Renders Table For Call Above
     
     output$data <- renderTable({
         Pupil_Left()
     })
-}
+
+    
+# Make Plot for Dilation Data
+    
+  #  output$plot <- renderPlot({
+   
+   #     ggplot(Pupil_Left,aes())
+        
+        
+        
+        
+    #})
+    
+    }
 
 # Launch App
 
