@@ -14,46 +14,43 @@ library(shiny)
 ################### Frontend ########################
 
 
-ui = fluidPage(
-    fluidRow(
-        column(2,
-               tableOutput('data')
-        )
-    )
-)
-
-
+ui = fluidPage(plotOutput("plot",height = "600px")
+               )
 
 ################### Backend ########################
 
-# Data Input
-
 server <- function(input, output, session) {
-    Pupil_Left <-
-        reactiveFileReader(100,
-                           session,
-                           '~/Unreal Projects/MyProject/Left_Eye_Dilation.csv',
-                           read.csv,header=FALSE)
+    
+# Data Reader at 100 MilSec
+
+Pupil_Left <-
+    reactiveFileReader(
+        100,
+        session,
+        '~/Unreal Projects/MyProject/Left_Eye_Dilation.csv',
+        read.csv,
+        header = FALSE
+    )
 
 # Renders Table For Call Above
     
-    output$data <- renderTable({
-        Pupil_Left()
-    })
-
+#    output$data <- renderTable({
+#        Pupil_Left()
+#    })
+    
     
 # Make Plot for Dilation Data
     
-  #  output$plot <- renderPlot({
-   
-   #     ggplot(Pupil_Left,aes())
-        
-        
-        
-        
-    #})
+output$plot <- renderPlot({
     
-    }
+    data = Pupil_Left()
+    
+    ggplot(data = data, mapping = aes(x=V2, y=V1)) + geom_point()
+    
+})
+
+
+}
 
 # Launch App
 
